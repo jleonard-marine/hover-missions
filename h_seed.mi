@@ -1,0 +1,23 @@
+# HOVER BEHAIOR SEED FILE #
+# developed by RUCOOL
+
+# DRIFT TABLE - linear lookup depth and ballast position
+# 0 m				f_neutral_ballast
+# x_hover_ballast_shallow	x_hover_depth_shallow
+# x_hover_ballast_deep		x_hover_depth_deep
+
+
+sensor: u_hover_bpump_ap_gain_shallow(cc/m)     1 # 1 - default, proportional gain, shallow bpump
+sensor: u_hover_bpump_ap_dgain_shallow(cc-s/m)  1 # 1 - default, derivative gain, shallow bpump
+sensor: u_hover_bpump_ap_gain_deep(cc/m) 	1 # 1 default, proportional gain, deep bpump
+sensor: u_hover_bpump_ap_dgain_deep(cc-s/m) 	1 # 1 default, derivative gain, deep bpum
+
+
+# BALLAST PUMP CC
+sensor: f_neutral_ballast(cc) 		 50		# ballast guess for neutral at 0 m
+sensor: x_hover_ballast_shallow(cc) 	-50		# ballast guess for x_hover_depth_shallow
+sensor: x_hover_ballast_deep(cc)    	-70  	        # ballast guess for x_hover_depth_deep
+
+# DEPTH
+sensor: x_hover_depth_shallow(m)     5   # the shallowest target drift depth
+sensor: x_hover_depth_deep(m)       12   # the deepest target drift depth
