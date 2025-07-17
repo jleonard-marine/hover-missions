@@ -1,0 +1,20 @@
+# SEED FILE FOR GLIDER HOVER
+# DRIFT TABLE - linear lookup depth and ballast position
+# 0 m						f_neutral_ballast
+# x_hover_ballast_shallow	x_hover_depth_shallow
+# x_hover_ballast_deep		x_hover_depth_deep
+
+sensor: u_hover_bpump_ap_gain_shallow(cc/m)     .75 # 1 - default, proportional gain, shallow bpump
+sensor: u_hover_bpump_ap_dgain_shallow(cc-s/m)  .75 # 1 - default, derivative gain, shallow bpump
+sensor: u_hover_bpump_ap_gain_deep(cc/m) 	.75 # 1 default, proportional gain, deep bpump
+sensor: u_hover_bpump_ap_dgain_deep(cc-s/m) 	.75 # 1 default, derivative gain, deep bpum
+
+
+# BALLAST PUMP CC
+sensor: f_neutral_ballast(cc) 		  40		# ballast guess for nuetral at 0 m
+sensor: x_hover_ballast_shallow(cc) 	  25		# ballast guess for x_hover_depth_shallow
+sensor: x_hover_ballast_deep(cc)    	-280		# ballast guess for x_hover_depth_deep
+
+# DEPTH
+sensor: x_hover_depth_shallow(m)    50   # the shallowest target drift depth
+sensor: x_hover_depth_deep(m)       200  # the deepest target drift depth
